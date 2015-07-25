@@ -2,6 +2,12 @@
 /*   Provided Code - Please Don't Edit   */
 ////////////////////////////////////////////////
 'use strict';
+var playerName = getName()
+
+function getName() {
+    prompt("Please write your username")
+    return prompt();
+}
 
 function getInput() {
     console.log("Please choose either 'rock', 'paper', or 'scissors'.")
@@ -38,17 +44,49 @@ function getComputerMove(move) {
 
     //That comment is really confusing, therefore my code is confusing.
     move = randomPlay()
-    return move || randomPlay() /* Your Expression */;
+    return move || randomPlay();
 
 }
 
-
 function getWinner(playerMove,computerMove) {
-    var winner;
+    var winner = "The winner is ";
+
+
     // Write code that will set winner to either 'player', 'computer', or 'tie' based on the values of playerMove and computerMove.
     // Assume that the only values playerMove and computerMove can have are 'rock', 'paper', and 'scissors'.
     // The rules of the game are that 'rock' beats 'scissors', 'scissors' beats 'paper', and 'paper' beats 'rock'.
     /* YOUR CODE HERE */
+    if(playerMove === "rock") {
+        if(computerMove === "scissor"){
+            winner += playerName
+        }
+        else{
+                winner += "your mac"
+            }
+    }
+    if(playerMove === "scissor"){
+        if(computerMove = "papper"){
+            winner += playerName
+        }
+        else{
+            winner += "your mac"
+        }
+    }
+    if(playerMove = "paper"){
+        if(computerMove = "rock"){
+            winner += playerName
+        }
+        else{
+            winner += "your mac"
+        }
+    }
+    if(playerMove == computerMove){
+        winner = "tie"
+    }
+    else{
+        winner +="somethings wrong" 
+    }
+
     return winner;
 }
 
