@@ -42,7 +42,6 @@ function getComputerMove(move) {
 
 }
 
-getComputerMove()
 
 function getWinner(playerMove,computerMove) {
     var winner;
