@@ -3,9 +3,15 @@
 ////////////////////////////////////////////////
 'use strict';
 var playerName = getName()
+var computerName = getComputerName()
 
 function getName() {
-    prompt("Please write your username")
+    prompt("Whats your your name?")
+    return prompt();
+}
+
+function getComputerName() {
+    prompt("Whats your computers name?")
     return prompt();
 }
 
@@ -84,9 +90,11 @@ function getWinner(playerMove,computerMove) {
         winner = "tie"
     }
     else{
-        winner +="somethings wrong" 
+        winner +="somethings wrong"
     }
-
+    //logging the name of player, computer, and who the winner was.
+    console.log(playerName + ":" + playerMove + "\n" + computerName + ":" + computerMove)
+    console.log("The winner is: " + winner);
     return winner;
 }
 
@@ -96,6 +104,20 @@ function playToFive() {
     var computerWins = 0;
     // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
     /* YOUR CODE HERE */
+    while(playerWins < 5 && computerWins < 5){
+    console.log("round : " + round);
+        var winner = getWinner()
+        if (winner == playerName) {
+            playerWins += 1
+        }
+        else if (winner == computerName) {
+            computerWins += 1
+        }
+        else {
+            console.log(winner);
+        }
+            round += 1;
+    }
     return [playerWins, computerWins];
 }
 
